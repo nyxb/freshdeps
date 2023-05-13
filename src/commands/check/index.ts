@@ -2,7 +2,7 @@
 import c from '@nyxb/picocolors'
 import type { SingleBar } from 'cli-progress'
 import { parseNyxi, parseNyxu, run } from '@nyxb/nyxi'
-import prompts from 'prompts'
+import { confirm } from '@tyck/prompts'
 import { createMultiProgresBar } from '../../log'
 import type {
    CheckOptions,
@@ -85,14 +85,9 @@ export async function check(options: CheckOptions) {
    }
 
    if (options.interactive && !options.write) {
-      options.write = await prompts([
-         {
-            name: 'write',
-            type: 'confirm',
-            initial: true,
-            message: c.green('write to package.json'),
-         },
-      ]).then((r: { write: any }) => r.write)
+      options.write = await confirm({
+         message: c.green('write to package.json'),
+      }) as boolean
    }
 
    if (options.write) {
@@ -105,7 +100,7 @@ export async function check(options: CheckOptions) {
       console.log()
 
       if (options.mode === 'default')
-         console.log(`Run ${c.cyan('fresh major')} to check major updates`)
+         console.log(`Run ${c.cyan('freshdeps major')} to check major updates`)
 
       if (hasChanges) {
          if (options.failOnOutdated)
@@ -127,14 +122,9 @@ export async function check(options: CheckOptions) {
          console.log(c.yellow('ℹ changes written to package.json'))
 
       if (options.interactive && !options.install) {
-         options.install = await prompts([
-            {
-               name: 'install',
-               type: 'confirm',
-               initial: true,
-               message: c.green('install now'),
-            },
-         ]).then((r: { install: any }) => r.install)
+         options.install = await confirm({
+            message: c.green('install now'),
+         }) as boolean
       }
 
       if (options.install) {
