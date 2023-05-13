@@ -16,6 +16,9 @@ importers:
       configerium:
         specifier: ^0.0.2
         version: 0.0.2
+      consolji:
+        specifier: ^0.1.4
+        version: 0.1.4
       detect-indent:
         specifier: ^7.0.1
         version: 7.0.1

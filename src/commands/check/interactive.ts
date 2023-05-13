@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import readline from 'node:readline'
+import consolji from 'consolji'
 import c from '@nyxb/picocolors'
 import { createControlledPromise, notNullish } from '@nyxb/utils'
 import type { CheckOptions, InteractiveContext, PackageMeta, ResolvedDepChange } from '../../types'
@@ -56,8 +57,8 @@ export async function promptInteractive(pkgs: PackageMeta[], options: CheckOptio
          render() {
             const Y = (v: string) => c.bold(c.green(v))
             console.clear()
-            console.log(`${FIG_BLOCK} ${c.gray(`${Y('↑↓')} to select, ${Y('space')} to toggle, ${Y('→')} to change version`)}`)
-            console.log(`${FIG_BLOCK} ${c.gray(`${Y('enter')} to confirm, ${Y('esc')} to cancel`)}`)
+            consolji.log(`${FIG_BLOCK} ${c.gray(`${Y('↑↓')} to select, ${Y('space')} to toggle, ${Y('→')} to change version`)}`)
+            consolji.log(`${FIG_BLOCK} ${c.gray(`${Y('enter')} to confirm, ${Y('esc')} to cancel`)}`)
             console.log()
 
             const lines: string[] = []
@@ -66,7 +67,7 @@ export async function promptInteractive(pkgs: PackageMeta[], options: CheckOptio
                lines.push(...renderChanges(pkg, options, ctx).lines)
             })
 
-            console.log(lines.join('\n'))
+            consolji.log(lines.join('\n'))
          },
          onKey(key) {
             if (key.name === 'escape') {
@@ -128,9 +129,9 @@ export async function promptInteractive(pkgs: PackageMeta[], options: CheckOptio
       return {
          render() {
             console.clear()
-            console.log(`${FIG_BLOCK} ${c.gray(`Select a version for ${c.green(c.bold(dep.name))}${c.gray(` (current ${dep.currentVersion})`)}`)}`)
+            consolji.log(`${FIG_BLOCK} ${c.gray(`Select a version for ${c.green(c.bold(dep.name))}${c.gray(` (current ${dep.currentVersion})`)}`)}`)
             console.log()
-            console.log(
+            consolji.log(
                formatTable(versions.map((v, idx) => {
                   return [
                      (index === idx ? FIG_POINTER : FIG_NO_POINTER) + (index === idx ? v.name : c.gray(v.name)),

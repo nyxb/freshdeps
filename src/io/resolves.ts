@@ -4,6 +4,7 @@ import os from 'node:os'
 import pacote from 'pacote'
 import semver from 'semver'
 import _debug from 'debug'
+import { consolji } from 'consolji'
 import { getNpmConfig } from '../utils/npm'
 import type { CheckOptions, DependencyFilter, DependencyResolvedCallback, PackageData, PackageMeta, RangeMode, RawDep, ResolvedDepChange } from '../types'
 import { diffSorter } from '../filters/diff-sorter'
@@ -49,8 +50,8 @@ export async function dumpCache() {
       debug.cache(`cache saved to ${cachePath}`)
    }
    catch (err) {
-      console.warn('Failed to save cache')
-      console.warn(err)
+      consolji.warn('Failed to save cache')
+      consolji.warn(err)
    }
 }
 

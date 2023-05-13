@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import c from '@nyxb/picocolors'
+import consolji from 'consolji'
 import type { SingleBar } from 'cli-progress'
 import { parseNyxi, parseNyxu, run } from '@nyxb/nyxi'
 import { confirm } from '@tyck/prompts'
@@ -52,13 +53,13 @@ export async function check(options: CheckOptions) {
 
    const hasChanges = resolvePkgs.length && resolvePkgs.some(i => i.resolved.some(j => j.update))
    if (!hasChanges) {
-      console.log(c.green('dependencies are already up-to-date'))
+      consolji.log(c.green('dependencies are already up-to-date'))
       return exitCode
    }
 
    const { lines, errLines } = renderPackages(resolvePkgs, options)
 
-   console.log(lines.join('\n'))
+   consolji.log(lines.join('\n'))
 
    if (!options.all) {
       const counter = resolvePkgs.reduce((counter, pkg) => {
@@ -72,15 +73,15 @@ export async function check(options: CheckOptions) {
       const last = resolvePkgs.length - counter
 
       if (last === 1)
-         console.log(c.green('dependencies are already up-to-date in one package\n'))
+         consolji.log(c.green('dependencies are already up-to-date in one package\n'))
       else if (last > 0)
-         console.log(c.green(`dependencies are already up-to-date in ${last} packages\n`))
+         consolji.log(c.green(`dependencies are already up-to-date in ${last} packages\n`))
    }
 
    if (errLines.length) {
-      console.error(c.inverse(c.red(c.bold(' ERROR '))))
+      consolji.error(c.inverse(c.red(c.bold(' ERROR '))))
       console.error()
-      console.error(errLines.join('\n'))
+      consolji.error(errLines.join('\n'))
       console.error()
    }
 
@@ -100,26 +101,26 @@ export async function check(options: CheckOptions) {
       console.log()
 
       if (options.mode === 'default')
-         console.log(`Run ${c.cyan('freshdeps major')} to check major updates`)
+         consolji.log(`Run ${c.cyan('freshdeps major')} to check major updates`)
 
       if (hasChanges) {
          if (options.failOnOutdated)
             exitCode = 1
 
-         console.log(`Add ${c.green('-w')} to write to package.json`)
+         consolji.log(`Add ${c.green('-w')} to write to package.json`)
       }
 
       console.log()
    }
    else if (hasChanges) {
       if (!options.install && !options.update && !options.interactive) {
-         console.log(
+         consolji.log(
             c.yellow(`ℹ changes written to package.json, run ${c.cyan('npm i')} to install updates.`),
          )
       }
 
       if (options.install || options.update || options.interactive)
-         console.log(c.yellow('ℹ changes written to package.json'))
+         consolji.log(c.yellow('ℹ changes written to package.json'))
 
       if (options.interactive && !options.install) {
          options.install = await confirm({
@@ -128,14 +129,14 @@ export async function check(options: CheckOptions) {
       }
 
       if (options.install) {
-         console.log(c.magenta('installing...'))
+         consolji.log(c.magenta('installing...'))
          console.log()
 
          await run(parseNyxi, [])
       }
 
       if (options.update) {
-         console.log(c.magenta('updating...'))
+         consolji.log(c.magenta('updating...'))
          console.log()
 
          await run(parseNyxu, options.recursive ? ['-r'] : [])

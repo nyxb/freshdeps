@@ -37,6 +37,7 @@
     "@nyxb/nyxi": "^0.0.30",
     "@tyck/prompts": "^0.0.2",
     "configerium": "^0.0.2",
+    "consolji": "^0.1.4",
     "detect-indent": "^7.0.1",
     "pacote": "^15.1.3",
     "semver": "^7.5.0",
