@@ -7,5 +7,5 @@ export { CheckPackages } from './api/check'
 export * from './types'
 
 export function defineConfig(config: Partial<CheckOptions>) {
-  return config
+   return config
 }
