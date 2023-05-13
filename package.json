@@ -1,0 +1,64 @@
+{
+  "name": "freshdeps",
+  "version": "0.0.1",
+  "description": "🌱 A modern cli tool that keeps your deps fresh",
+  "author": "Dennis Ollhoff <contact@nyxb.xyz>",
+  "license": "MIT",
+  "hompage": "https://💻nyxb.ws",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyxblabs/freshdeps.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nyxblabs/freshdeps/issues"
+  },
+  "bin": {
+    "fresh": "bin/fresh.mjs"
+  },
+  "type": "module",
+  "main": "dist/index.mjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Happy hacking\" && 💙"
+  },
+  "dependencies": {
+    "@nyxb/nyxi": "^0.0.30",
+    "@npmcli/config": "^6.1.6",
+    "detect-indent": "^7.0.1",
+    "pacote": "^15.1.3",
+    "@tyck/prompts": "^0.0.2",
+    "semver": "^7.5.0",
+    "configerium": "^0.0.2",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@nyxb/eslint-config": "^0.0.53",
+    "@nyxb/utils": "^0.0.3",
+    "@types/cli-progress": "^3.11.0",
+    "@types/debug": "^4.1.7",
+    "@types/node": "^18.16.3",
+    "@types/pacote": "^11.1.5",
+    "@types/semver": "^7.3.13",
+    "@types/yargs": "^17.0.24",
+    "cli-progress": "^3.12.0",
+    "cross-env": "^7.0.3",
+    "debug": "^4.3.4",
+    "deepmerge": "^4.3.1",
+    "eslint": "^8.40.0",
+    "dynot": "^0.1.8",
+    "fast-glob": "^3.2.12",
+    "@nyxb/picocolors": "^1.0.2",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.4",
+    "buildkarium": "^0.0.2",
+    "vitest": "^0.30.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "eslintConfig": {
+    "extends": "@nyxb"
+  }
+}
