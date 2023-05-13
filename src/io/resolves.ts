@@ -11,14 +11,14 @@ import { getMaxSatisfying, getPrefixedVersion } from '../utils/versions'
 import { getPackageMode } from '../utils/config'
 
 const debug = {
-   cache: _debug('fresh:cache'),
-   resolve: _debug('fresh:resolve'),
+   cache: _debug('freshdeps:cache'),
+   resolve: _debug('freshdeps:resolve'),
 }
 
 let cache: Record<string, { cacheTime: number; data: PackageData }> = {}
 let cacheChanged = false
 
-const cacheDir = resolve(os.tmpdir(), 'fresh')
+const cacheDir = resolve(os.tmpdir(), 'freshdeps')
 const cachePath = resolve(cacheDir, 'cache.json')
 const cacheTTL = 30 * 60_000 // 30min
 
