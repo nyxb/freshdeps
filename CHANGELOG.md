@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/nyxblabs/freshdeps/compare/v0.0.2...v0.0.3)
+
+
+### 🚀 Enhancements
+
+  - **README.md:** Add initial README.md file This commit adds the initial README.md file to the repository. The README.md file contains a brief description of the project, its features, usage, configuration options, and license. It also includes badges for npm version, npm downloads, bundle size, and license. ([f9ff712](https://github.com/nyxblabs/freshdeps/commit/f9ff712))
+
+### 🎨 Styles
+
+  - **github-freshdeps.png:** Add cover image for GitHub repository The commit adds a cover image for the GitHub repository. The image is named `github-freshdeps.png` and is located in the `.github/assets` directory. ([bfd0046](https://github.com/nyxblabs/freshdeps/commit/bfd0046))
+
+### ❤️  Contributors
+
+- Nyxb <contact@nyxb.xyz>
+
 ## v0.0.2
 
 
