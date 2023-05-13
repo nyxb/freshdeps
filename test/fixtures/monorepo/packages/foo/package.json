@@ -1,5 +1,5 @@
 {
-  "name": "@fresh/example-foo",
+  "name": "@freshdeps/example-foo",
   "private": true,
   "dependencies": {
     "lodash": "^4.17.10",

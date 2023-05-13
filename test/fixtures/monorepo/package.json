@@ -1,5 +1,5 @@
 {
-  "name": "@fresh/monorepo-example",
+  "name": "@freshdeps/monorepo-example",
   "private": true,
   "dependencies": {
     "express": "4.12.x",
