@@ -1,5 +1,5 @@
 {
-  "name": "@fresh/pkgmode",
+  "name": "@freshdeps/pkgmode",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
