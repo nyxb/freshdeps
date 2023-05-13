@@ -15,12 +15,12 @@ describe('load config', () => {
       }
       const { packageMode } = await resolveConfig(options)
       expect(packageMode).toMatchInlineSnapshot(`
-      {
-        "/vue/": "latest",
-        "typescript": "major",
-        "unocss": "ignore",
-      }
-    `)
+        {
+          "/vue/": "latest",
+          "typescript": "major",
+          "unocss": "ignore",
+        }
+      `)
    })
 
    test('without packagemode', async () => {
