@@ -4,7 +4,7 @@ import { loadConfig } from 'configerium'
 import type { CommonOptions } from './types'
 import { toArray } from './utils/toArray'
 
-const debug = _debug('fresh:config')
+const debug = _debug('freshdeps:config')
 
 export const LOGLEVELS = ['debug', 'info', 'warn', 'error', 'silent']
 
