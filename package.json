@@ -1,6 +1,6 @@
 {
   "name": "freshdeps",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "🌱 A modern cli tool that keeps your deps fresh",
   "author": "Dennis Ollhoff <contact@nyxb.xyz>",
   "license": "MIT",
