@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { loadConfig } from 'configerium'
 
 export default async () => {
