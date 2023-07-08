@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/nyxblabs/freshdeps/compare/v0.0.3...v0.0.4)
+
+### 🏡 Chore
+
+- **release:** V0.0.3 ([406ebd8](https://github.com/nyxblabs/freshdeps/commit/406ebd8))
+- **package.json): update packageManager to pnpm@8.6.5 for better dependency management 📦 chore(package.json:** Update dependencies: - @npmcli/config from ^6.1.6 to ^6.2.1 - @nyxb/nyxi from ^0.0.30 to ^0.0.30 - @tyck/prompts from ^0.0.2 to ^0.0.2 - configerium from ^0.0.2 to ^0.0.2 - consolji from ^0.1.4 to ^0.1.4 - detect-indent from ^7.0.1 to ^7.0.1 - pacote from ^15.1.3 to ^15.2.0 - semver from ^7.5.0 to ^7.5.3 - yargs from ^17.7.2 to ^17.7.2 - @types/cli-progress from ^3.11.0 to ^3.11.0 - @types/debug from ^4.1.7 to ^4.1.8 - @types/node from ^18.16.3 to ^20.3.2 - @types/pacote from ^11.1.5 to ^11.1.5 - @types/semver from ^7.3.13 to ^7.5.0 - @types/yargs from ^17.0.24 to ^17.0.24 - @vitest/coverage-c8 from ^0.31.0 to ^0.31.0 - buildkarium from ^0.0.2 to ^0.0.2 - @nyxb/picocolors from ^1.0.2 to ^1.0.2 - @nyxb/utils from ^0.0.3 to ^0.0.3 - @types/cli-progress from ^3.11.0 to ^3.11.0 - @types/debug from ^4.1.7 to ^4.1.8 - @types/node from ^18.16.3 to ^20.3.2 - @types/pacote from ^11.1.5 to ^11.1.5 - @types/semver from ^ ([7a74c92](https://github.com/nyxblabs/freshdeps/commit/7a74c92))
+
+### ❤️  Contributors
+
+- Nyxb <contact@nyxb.xyz>
+
 ## v0.0.3
 
 [compare changes](https://github.com/nyxblabs/freshdeps/compare/v0.0.2...v0.0.3)
