@@ -1,5 +1,6 @@
 import c from '@nyxb/picocolors'
 import semver from 'semver'
+import consolji from 'consolji'
 import type {
    CheckOptions,
    InteractiveContext,
@@ -129,6 +130,13 @@ function renderResolveError(dep: ResolvedDepChange) {
       lines.push(c.red(dep.resolveError.toString()))
    }
    return lines
+}
+
+export function outputErr(errLines: string[]) {
+   consolji.error(c.inverse(c.red(c.bold(' ERROR '))))
+   consolji.error('')
+   consolji.error(errLines.join('\n'))
+   consolji.error('')
 }
 
 export function renderPackages(resolvePkgs: PackageMeta[], options: CheckOptions) {

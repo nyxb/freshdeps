@@ -12,7 +12,7 @@ import type {
 import { CheckPackages } from '../../api/check'
 import { writePackage } from '../../io/packages'
 import { promptInteractive } from './interactive'
-import { renderPackages } from './render'
+import { outputErr, renderPackages } from './render'
 
 export async function check(options: CheckOptions) {
    let exitCode = 0
@@ -51,13 +51,17 @@ export async function check(options: CheckOptions) {
    if (options.interactive)
       resolvePkgs = await promptInteractive(resolvePkgs, options)
 
+   const { lines, errLines } = renderPackages(resolvePkgs, options)
+
    const hasChanges = resolvePkgs.length && resolvePkgs.some(i => i.resolved.some(j => j.update))
    if (!hasChanges) {
-      consolji.log(c.green('dependencies are already up-to-date'))
+      if (errLines.length)
+         outputErr(errLines)
+      else
+         console.log(c.green('dependencies are already up-to-date'))
+
       return exitCode
    }
-
-   const { lines, errLines } = renderPackages(resolvePkgs, options)
 
    consolji.log(lines.join('\n'))
 
@@ -78,12 +82,8 @@ export async function check(options: CheckOptions) {
          consolji.log(c.green(`dependencies are already up-to-date in ${last} packages\n`))
    }
 
-   if (errLines.length) {
-      consolji.error(c.inverse(c.red(c.bold(' ERROR '))))
-      console.error()
-      consolji.error(errLines.join('\n'))
-      console.error()
-   }
+   if (errLines.length)
+      outputErr(errLines)
 
    if (options.interactive && !options.write) {
       options.write = await confirm({
